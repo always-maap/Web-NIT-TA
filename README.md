@@ -8,7 +8,7 @@
 
 ## lectures
 | Title | Link |
-|:---------------------------------------|--------------------------------------------------------------------------------------------|
+|:---------------------------------------|:--------------------------------------------------------------------------------------------|
 | 1. Website is an abstraction | https://drive.google.com/file/d/1-3MNV6BhgSBAJdKGVxgIICN_TYUHzpSC/view?usp=sharing |
 | 2. Deploy now | https://drive.google.com/file/d/1-OLQemvp9wRiPOP_bEIKGh3cLyHqSRv_/view?usp=sharing |
 
