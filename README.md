@@ -11,13 +11,16 @@
 |:---------------------------------------|:--------------------------------------------------------------------------------------------|
 | 1. Website is an abstraction | https://drive.google.com/file/d/1-3MNV6BhgSBAJdKGVxgIICN_TYUHzpSC/view?usp=sharing |
 | 2. Deploy now | https://drive.google.com/file/d/1-OLQemvp9wRiPOP_bEIKGh3cLyHqSRv_/view?usp=sharing |
+| 3. CSS overview with an example | https://drive.google.com/file/d/1Y_LcgQkX--UbkaVe24d3kLLs6ZcDeYtd/view?usp=sharing |
+| 4. Your first card | https://drive.google.com/file/d/1tif5-6hMAVrQjR8bvXECA7l0i5xIn-oG/view?usp=sharing |
+
 
 
 ## Examples
 | App                                    | Description                                                                                |
 |:---------------------------------------|--------------------------------------------------------------------------------------------|
+| Simple Button | simple css button |
 | First card | basic css showcasing real world card |
-
 
 ## Setup
 Make sure you have [node.js](https://nodejs.org/en/) installed. Install yarn if you haven't already. 
