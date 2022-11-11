@@ -13,7 +13,7 @@
 | 2. Deploy now | https://drive.google.com/file/d/1-OLQemvp9wRiPOP_bEIKGh3cLyHqSRv_/view?usp=sharing |
 | 3. CSS overview with an example | https://drive.google.com/file/d/1Y_LcgQkX--UbkaVe24d3kLLs6ZcDeYtd/view?usp=sharing |
 | 4. Your first card | https://drive.google.com/file/d/1tif5-6hMAVrQjR8bvXECA7l0i5xIn-oG/view?usp=sharing |
-
+| 5. JavaScript fundamentals | https://drive.google.com/file/d/19_1GtFzNe4YR1jsyQOx5-HbIcoZtxllI/view?usp=sharing |
 
 
 ## Examples
@@ -21,6 +21,8 @@
 |:---------------------------------------|--------------------------------------------------------------------------------------------|
 | Simple Button | simple css button |
 | First card | basic css showcasing real world card |
+| Guess the number | basic js guessing number |
+
 
 ## Setup
 Make sure you have [node.js](https://nodejs.org/en/) installed. Install yarn if you haven't already. 
