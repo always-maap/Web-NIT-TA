@@ -14,6 +14,8 @@
 | 3. CSS overview with an example | https://drive.google.com/file/d/1Y_LcgQkX--UbkaVe24d3kLLs6ZcDeYtd/view?usp=sharing |
 | 4. Your first card | https://drive.google.com/file/d/1tif5-6hMAVrQjR8bvXECA7l0i5xIn-oG/view?usp=sharing |
 | 5. JavaScript fundamentals | https://drive.google.com/file/d/19_1GtFzNe4YR1jsyQOx5-HbIcoZtxllI/view?usp=sharing |
+| 7. Honoi tower | https://drive.google.com/file/d/1YYvpZf7yxFYgxvNaYbvpLetJ773zbfBb/view?usp=sharing |
+
 
 
 ## Examples
@@ -22,6 +24,7 @@
 | Simple Button | simple css button |
 | First card | basic css showcasing real world card |
 | Guess the number | basic js guessing number |
+| Hanoi tower | demonstrating dom with a visual example |
 
 
 ## Setup
@@ -31,7 +34,7 @@ Make sure you have [node.js](https://nodejs.org/en/) installed. Install yarn if 
 This repo is a [yarn workspace](https://classic.yarnpkg.com/lang/en/docs/workspaces/). a simple ```yarn install``` should share dependeices in examples and app.
 
 
-# Credit
+## Credit
 All the credit goes to wonderful professors at Noshirvani Computer department.
 
 ## License
