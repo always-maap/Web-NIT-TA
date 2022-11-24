@@ -1,0 +1,37 @@
+:root {
+  --size: 16px;
+}
+
+body[data-theme="light"] {
+  --bg: white; 
+  --primary-bg: buttonface;
+  --primary-text: black;
+}
+
+body[data-theme="dark"] {
+  --bg: black; 
+  --primary-bg: blue;
+  --primary-text: white;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+button {
+  border: none;
+  padding: 8px 16px;
+  margin: 10px 0;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  font-size: var(--size);
+}
+
+.card {
+  max-width: 500px;
+  text-align: center;
+  padding: 48px;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  font-size: var(--size);
+}
