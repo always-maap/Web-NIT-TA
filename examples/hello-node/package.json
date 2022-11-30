@@ -1,0 +1,16 @@
+{
+  "name": "hello-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node index.js",
+    "test": "node sample.js"
+  },
+  "keywords": [],
+  "author": "tur1ng",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.31.2"
+  }
+}
