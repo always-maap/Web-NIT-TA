@@ -15,6 +15,7 @@
 | 4. Your first card | https://drive.google.com/file/d/1tif5-6hMAVrQjR8bvXECA7l0i5xIn-oG/view?usp=sharing |
 | 5. JavaScript fundamentals | https://drive.google.com/file/d/19_1GtFzNe4YR1jsyQOx5-HbIcoZtxllI/view?usp=sharing |
 | 7. Honoi tower | https://drive.google.com/file/d/1YYvpZf7yxFYgxvNaYbvpLetJ773zbfBb/view?usp=sharing |
+| 8. Nodejs and modules | https://drive.google.com/file/d/1lsdd9kKzQSqB5-KmeFyay2jujHf7Mv1-/view?usp=sharing |
 
 
 
@@ -25,6 +26,8 @@
 | First card | basic css showcasing real world card |
 | Guess the number | basic js guessing number |
 | Hanoi tower | demonstrating dom with a visual example |
+| Hello node | nodejs basic exmaple |
+| Modules | web's module system |
 
 
 ## Setup
