@@ -17,7 +17,7 @@
 | 7. Honoi tower | https://drive.google.com/file/d/1YYvpZf7yxFYgxvNaYbvpLetJ773zbfBb/view?usp=sharing |
 | 8. Nodejs and modules | https://drive.google.com/file/d/1lsdd9kKzQSqB5-KmeFyay2jujHf7Mv1-/view?usp=sharing |
 | 9. Forms and FormData |  |
-| 10. Fetch and asynchronous programming |  |
+| 10. Fetch and async/await |  |
 
 ## Bonus
 | Title | Link |
