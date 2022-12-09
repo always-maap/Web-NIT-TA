@@ -6,7 +6,7 @@
   <p>Web Programming TA class notes and examples for Babol Noshirvani University of Technology - Fall 2022</p>
 </div>
 
-## lectures
+## Lectures
 | Title | Link |
 |:---------------------------------------|:--------------------------------------------------------------------------------------------|
 | 1. Website is an abstraction | https://drive.google.com/file/d/1-3MNV6BhgSBAJdKGVxgIICN_TYUHzpSC/view?usp=sharing |
@@ -16,6 +16,13 @@
 | 5. JavaScript fundamentals | https://drive.google.com/file/d/19_1GtFzNe4YR1jsyQOx5-HbIcoZtxllI/view?usp=sharing |
 | 7. Honoi tower | https://drive.google.com/file/d/1YYvpZf7yxFYgxvNaYbvpLetJ773zbfBb/view?usp=sharing |
 | 8. Nodejs and modules | https://drive.google.com/file/d/1lsdd9kKzQSqB5-KmeFyay2jujHf7Mv1-/view?usp=sharing |
+| 9. Forms and FormData |  |
+| 10. Fetch and asynchronous programming |  |
+
+## Bonus
+| Title | Link |
+|:---------------------------------------|:--------------------------------------------------------------------------------------------|
+|  |  |
 
 
 
@@ -28,6 +35,7 @@
 | Hanoi tower | demonstrating dom with a visual example |
 | Hello node | nodejs basic exmaple |
 | Modules | web's module system |
+| Todo app | learn forms with an example |
 
 
 ## Setup
