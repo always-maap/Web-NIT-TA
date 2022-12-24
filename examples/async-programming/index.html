@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrapper {
+        display: flex;
+        justify-content: space-around;
+      }
+      #country-info {
+        position: sticky;
+        top: 8px;
+        width: 50%;
+        align-self: flex-start;
+      }
+      #countries {
+        width: 50%;
+      }
+      li {
+        width: max-content;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <ul id="countries">
+        Loading...
+      </ul>
+      <div id="country-info"></div>
+    </div>
+
+    <script>
+      const countriesEl = document.getElementById("countries");
+      const countryInfo = document.getElementById("country-info");
+
+      (async () => {
+        const apiRes = await fetch("https://restcountries.com/v3.1/all");
+        const countries = await apiRes.json();
+
+        const countriesItems = countries
+          .sort((a, b) => a.name.common > b.name.common)
+          .map((country) => {
+            const countryItem = document.createElement("li");
+            countryItem.onclick = () => {
+              renderCountry(
+                country.name.common,
+                country.flags.png,
+                country.capital[0]
+              );
+            };
+            countryItem.innerText = `${country.flag} ${country.name.common}`;
+            return countryItem;
+          });
+
+        countriesEl.replaceChildren(...countriesItems);
+      })();
+
+      function renderCountry(name, flag, capital) {
+        const elements = [];
+
+        const flagPicEl = document.createElement("img");
+        flagPicEl.src = flag;
+        flagPicEl.width = 320;
+        flagPicEl.height = 192;
+        elements.push(flagPicEl);
+
+        const nameEl = document.createElement("h2");
+        nameEl.innerText = name;
+        elements.push(nameEl);
+
+        const capitalEl = document.createElement("div");
+        capitalEl.innerText = `capital: ${capital}`;
+        elements.push(capitalEl);
+
+        countryInfo.replaceChildren(...elements);
+      }
+    </script>
+  </body>
+</html>
