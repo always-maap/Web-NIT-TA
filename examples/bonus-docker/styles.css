@@ -1,0 +1,67 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 62.5%;
+}
+
+body {
+  background: #020202
+}
+
+.wrapper {
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+	height: 100%;
+}
+
+.rods {
+  display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	width: 100%;
+	max-width: 40rem;
+}
+
+.rod {
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	width: 1rem;
+	height: 30rem;
+	background: #4a4a4a;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.disk {
+  width: 10rem;
+	height: 3rem;
+	background: #fff;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.base {
+  width: 41rem;
+	height: 8px;
+	background: #adadad;
+	margin-top: -2.4rem;
+}
+
+.btn {
+  border: 1px solid #adadad;
+	background: none;
+	padding: 8px 16px;
+	color: #adadad;
+	font-weight: 600;
+}

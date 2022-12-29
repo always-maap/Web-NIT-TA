@@ -1,0 +1,15 @@
+{
+  "name": "bonus-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "serve"
+  },
+  "keywords": [],
+  "author": "tur1ng",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^14.1.2"
+  }
+}
