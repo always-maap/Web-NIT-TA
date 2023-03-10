@@ -24,9 +24,8 @@
 ## Bonus
 | Title | Link |
 |:---------------------------------------|:--------------------------------------------------------------------------------------------|
-|  |  |
-
-
+| Interview | https://drive.google.com/file/d/1ULOrgoEa9IGRmHtox3VXZJOJkm_M5z76/view?usp=sharing |
+| pg - pgadmin with Docker | https://drive.google.com/file/d/1aRujGI9wJldVV4KGJ9nbayqqSLdj8M56/view?usp=sharing |
 
 ## Examples
 | App                                    | Description                                                                                |
