@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "paths": {
+      "IAM.Domain": ["./IAM.Domain/index.ts"],
+      "IAM.Application": ["./IAM.Application"],
+      "IAM.Infrastructure": ["./IAM.Infrastructure"]
+    }
+  },
+  "include": [
+    "IAM.Presentation/**/*.ts",
+    "IAM.Domain/**/*.ts",
+    "IAM.Infrastructure/**/*.ts",
+    "IAM.Application/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}
