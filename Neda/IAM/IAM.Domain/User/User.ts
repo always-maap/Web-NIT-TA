@@ -28,14 +28,14 @@ export class User {
   public static Create(
     firstName: string,
     lastName: string,
-    password: string,
+    phone: string,
     gender: string,
     picture: string
   ) {
     return new User(
       firstName,
       lastName,
-      password,
+      phone,
       gender,
       picture,
       new Date(),

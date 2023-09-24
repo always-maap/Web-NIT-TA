@@ -1,4 +1,4 @@
-import uuid from "uuid";
+import * as uuid from "uuid";
 import jwt from "jsonwebtoken";
 
 import { User } from "IAM.Domain";

@@ -1,12 +1,26 @@
+// loads environment variables from a .env file into process.env. built-in since Node.js version 20.6.0
+import "dotenv/config";
 import express from "express";
+import bodyParser from "body-parser";
 
 import { MapRoutes } from "./Controllers";
 
-const app = express();
-const port = process.env.PORT || 3000;
+(async () => {
+  const app = express();
+  const port = process.env.PORT || 3000;
 
-app.use(MapRoutes());
+  // parse application/x-www-form-urlencoded
+  app.use(bodyParser.urlencoded({ extended: false }));
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+  // parse application/json
+  app.use(bodyParser.json());
+
+  // map routes
+  const mappedRoutes = await MapRoutes();
+  app.use(mappedRoutes);
+
+  // starting server
+  app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+  });
+})();

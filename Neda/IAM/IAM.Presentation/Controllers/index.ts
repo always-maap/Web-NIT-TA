@@ -1,14 +1,14 @@
 import { InjectDependencies } from "IAM.Presentation/DI";
 import { Router } from "express";
 
-export const MapRoutes = () => {
-  console.log("first");
-  const { authController, userController } = InjectDependencies();
-  console.log("third");
+export const MapRoutes = async () => {
+  const { authController, userController } = await InjectDependencies();
+
   const routes = Router();
 
   routes.post("/sign-up", authController.SignUp);
   routes.post("/sign-in", authController.SignIn);
+  routes.post("/verify", () => {});
 
   routes.get("/user", userController.Get);
 

@@ -1,0 +1,13 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1695552819426,
+      "tag": "0000_keen_tinkerer",
+      "breakpoints": true
+    }
+  ]
+}
