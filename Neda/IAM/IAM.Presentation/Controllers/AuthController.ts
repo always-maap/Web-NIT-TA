@@ -1,23 +1,47 @@
 import type { Request, Response } from "express";
 
-import { IAuthService } from "IAM.Application";
-import { SignUpRequest } from "IAM.Contracts";
+import {
+  ISignInService,
+  ISignUpService,
+  IVerifyCodeService,
+} from "IAM.Application";
+import { SignInRequest, SignUpRequest, VerifyCodeRequest } from "IAM.Contracts";
 import { SignUpMapper } from "../Mapper/SignUpMapper";
+import { SignInMapper } from "../Mapper/SignInMapper";
+import { VerifyCodeMapper } from "../Mapper/VerifyCodeMapper";
 
 export class AuthController {
-  private readonly _authService: IAuthService;
+  private readonly _signUpService: ISignUpService;
+  private readonly _signInService: ISignInService;
+  private readonly _verifyService: IVerifyCodeService;
 
-  constructor(authService: IAuthService) {
-    this._authService = authService;
+  constructor(
+    signUpService: ISignUpService,
+    signInService: ISignInService,
+    verifyCodeService: IVerifyCodeService
+  ) {
+    this._signUpService = signUpService;
+    this._signInService = signInService;
+    this._verifyService = verifyCodeService;
   }
 
   public SignUp = (req: Request, res: Response) => {
     const body: SignUpRequest = req.body;
     const mappedParam = SignUpMapper(body);
-    res.status(201).send(this._authService.HandleSignUp(mappedParam));
+    res.status(201).send(this._signUpService.Handle(mappedParam));
   };
 
-  public SignIn(req: Request, res: Response) {
-    res.send(this._authService.HandleSignIn());
-  }
+  public SignIn = async (req: Request, res: Response) => {
+    const body: SignInRequest = req.body;
+    const mappedParam = SignInMapper(body);
+    const x = await this._signInService.Handle(mappedParam);
+    res.send("nice");
+  };
+
+  public VerifyCode = async (req: Request, res: Response) => {
+    const body: VerifyCodeRequest = req.body;
+    const mappedParam = VerifyCodeMapper(body);
+    const x = await this._verifyService.Handle(mappedParam);
+    res.send(x);
+  };
 }

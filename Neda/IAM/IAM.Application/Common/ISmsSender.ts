@@ -3,3 +3,7 @@ export interface SmsRequest {
   message: string;
   template: string;
 }
+
+export interface ISmsSender {
+  SendSms(request: SmsRequest): void;
+}

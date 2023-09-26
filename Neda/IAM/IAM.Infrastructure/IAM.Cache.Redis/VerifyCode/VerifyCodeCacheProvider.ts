@@ -1,5 +1,6 @@
 import { IVerifyCodeCacheProvider } from "IAM.Application";
 import { IRedisClient } from "../Configurations/RedisDatabase";
+import { VerifyCodeCacheKey } from "./VerifyCodeCacheKey";
 
 export class VerifyCodeCacheProvider implements IVerifyCodeCacheProvider {
   private readonly _cache: IRedisClient;
@@ -8,10 +9,15 @@ export class VerifyCodeCacheProvider implements IVerifyCodeCacheProvider {
     this._cache = cache;
   }
 
-  set(code: number): boolean {
-    throw new Error("Method not implemented.");
+  async set(phone: string, code: number) {
+    const resp = await this._cache.set(VerifyCodeCacheKey(phone), code, {
+      EX: 5 * 60,
+    });
+    return resp === "OK";
   }
-  get(phone: string): number {
-    throw new Error("Method not implemented.");
+
+  async get(phone: string): Promise<number | null> {
+    const resp = await this._cache.get(VerifyCodeCacheKey(phone));
+    return resp ? Number(resp) : null;
   }
 }

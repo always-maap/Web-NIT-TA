@@ -1,4 +1,5 @@
 export class User {
+  Id: string;
   FirstName: string;
   LastName: string;
   Phone: string;
@@ -8,6 +9,7 @@ export class User {
   UpdatedAt: Date;
 
   private constructor(
+    id: string,
     firstName: string,
     lastName: string,
     phone: string,
@@ -16,6 +18,7 @@ export class User {
     createdAt: Date,
     updatedAt: Date
   ) {
+    this.Id = id;
     this.FirstName = firstName;
     this.LastName = lastName;
     this.Phone = phone;
@@ -26,6 +29,7 @@ export class User {
   }
 
   public static Create(
+    id: string,
     firstName: string,
     lastName: string,
     phone: string,
@@ -33,6 +37,7 @@ export class User {
     picture: string
   ) {
     return new User(
+      id,
       firstName,
       lastName,
       phone,

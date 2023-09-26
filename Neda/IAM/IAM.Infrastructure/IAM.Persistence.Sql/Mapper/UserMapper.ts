@@ -5,6 +5,7 @@ type InsertUser = typeof users.$inferInsert;
 
 export function UserMapper(user: User): InsertUser {
   return {
+    Id: user.Id,
     FirstName: user.FirstName,
     LastName: user.LastName,
     Phone: user.Phone,

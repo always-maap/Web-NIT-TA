@@ -1,22 +1,21 @@
 import Kavenegar from "kavenegar";
 
-import { ISmsSender } from "./ISmsSender";
-import { SmsRequest } from "./SmsRequest";
+import { ISmsSender, SmsRequest } from "IAM.Application";
 
-export class SMSSender implements ISmsSender {
+export class SmsSender implements ISmsSender {
   SendSms(request: SmsRequest) {
     var api = Kavenegar.KavenegarApi({
-      apikey:
-        "4A756A716B4C70464D6D495A47463733414F752B454F45613776456B474D486F77775432376F4E515853733D",
+      apikey: process.env.SMS_SRV_KEY!,
     });
-    api.Send(
+
+    return api.VerifyLookup(
       {
-        message: "خدمات پیام کوتاه کاوه نگار",
-        sender: "1000689696",
-        receptor: "09197532677",
+        receptor: request.phoneNumber,
+        token: request.message,
+        template: request.template,
       },
-      () => {
-        console.log("worked");
+      (_, status) => {
+        console.log(status);
       }
     );
   }

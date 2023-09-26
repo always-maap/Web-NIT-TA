@@ -1,4 +1,4 @@
 export interface IVerifyCodeCacheProvider {
-  set(code: number): boolean;
-  get(phone: string): number;
+  set(phone: string, code: number): Promise<boolean>;
+  get(phone: string): Promise<number | null>;
 }

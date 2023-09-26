@@ -8,7 +8,7 @@ export const MapRoutes = async () => {
 
   routes.post("/sign-up", authController.SignUp);
   routes.post("/sign-in", authController.SignIn);
-  routes.post("/verify", () => {});
+  routes.post("/verify", authController.VerifyCode);
 
   routes.get("/user", userController.Get);
 

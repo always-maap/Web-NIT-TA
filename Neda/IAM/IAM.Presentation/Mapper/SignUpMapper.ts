@@ -1,4 +1,4 @@
-import { SignUpParam } from "IAM.Application/Authentication/SignUpParam";
+import { SignUpParam } from "IAM.Application";
 import { SignUpRequest } from "IAM.Contracts";
 
 export function SignUpMapper(req: SignUpRequest): SignUpParam {

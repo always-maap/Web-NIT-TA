@@ -1,1 +1,1 @@
-export const VerifyCodeCacheKey = (phone: number) => `iam:vc:${phone}`;
+export const VerifyCodeCacheKey = (phone: string) => `iam:vc:${phone}`;
