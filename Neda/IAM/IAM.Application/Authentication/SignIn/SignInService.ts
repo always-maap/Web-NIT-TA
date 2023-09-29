@@ -1,8 +1,9 @@
+import { ISmsSender } from "@neda/framework";
+
 import { SignInParam } from "./SignInParam";
 import { ISignInService } from "./ISignInService";
 import { IUserRepository } from "../../Common/IUserRepository";
 import { IVerifyCodeCacheProvider } from "../../Common/IVerifyCodeCacheProvider";
-import { ISmsSender } from "../../Common/ISmsSender";
 
 export class SignInService implements ISignInService {
   private readonly _userRepository: IUserRepository;

@@ -4,8 +4,8 @@ import {
   IJwtTokenGenerator,
   IUserRepository,
   IVerifyCodeCacheProvider,
-  VerifyCodeParam,
 } from "IAM.Application";
+import { VerifyCodeParam } from "./VerifyCodeParam";
 
 export class VerifyCodeService implements IVerifyCodeService {
   private readonly _verifyCodeCache: IVerifyCodeCacheProvider;

@@ -1,6 +1,7 @@
 import Kavenegar from "kavenegar";
 
-import { ISmsSender, SmsRequest } from "IAM.Application";
+import { ISmsSender } from "./ISmsSender";
+import { SmsRequest } from "./SmsRequest";
 
 export class SmsSender implements ISmsSender {
   SendSms(request: SmsRequest) {
@@ -14,8 +15,10 @@ export class SmsSender implements ISmsSender {
         token: request.message,
         template: request.template,
       },
-      (_, status) => {
-        console.log(status);
+      (_, status, message) => {
+        if (status !== 200) {
+          console.log(status, message);
+        }
       }
     );
   }

@@ -1,7 +1,6 @@
 export * from "./Common/IJwtTokenGenerator";
 export * from "./Common/IUserRepository";
 export * from "./Common/IVerifyCodeCacheProvider";
-export * from "./Common/ISmsSender";
 
 export * from "./Authentication/SignUp/SignUpParam";
 export * from "./Authentication/SignUp/ISignUpService";

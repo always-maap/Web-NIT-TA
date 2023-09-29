@@ -1,4 +1,4 @@
-import { InjectDependencies } from "IAM.Presentation/DI";
+import { InjectDependencies } from "IAM.Presentation/DependencyInjection";
 import { Router } from "express";
 
 export const MapRoutes = async () => {

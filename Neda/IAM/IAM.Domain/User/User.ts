@@ -36,7 +36,7 @@ export class User {
     gender: string,
     picture: string
   ) {
-    return new User(
+    const user = new User(
       id,
       firstName,
       lastName,
@@ -46,5 +46,7 @@ export class User {
       new Date(),
       new Date()
     );
+
+    return user;
   }
 }

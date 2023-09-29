@@ -1,3 +1,5 @@
+import { FakeSmsSender } from "@neda/framework";
+
 import {
   CreateRedisDatabase,
   JWTTokenGenerator,
@@ -11,19 +13,18 @@ import {
   SignInService,
   SignUpService,
 } from "IAM.Application";
-import { SmsSender } from "IAM.Infrastructure/IAM.Notification.Sms/SmsSender";
 
 export const InjectDependencies = async () => {
   const redisClient = await CreateRedisDatabase();
   const jwtTokenGenerator = new JWTTokenGenerator();
   const userRepository = new UserRepository();
   const verifyCodeCacheProvider = new VerifyCodeCacheProvider(redisClient);
-  const smsSender = new SmsSender();
+  const fakeSmsSender = new FakeSmsSender();
 
   const signInService = new SignInService(
     userRepository,
     verifyCodeCacheProvider,
-    smsSender
+    fakeSmsSender
   );
 
   const signUpService = new SignUpService(jwtTokenGenerator, userRepository);
