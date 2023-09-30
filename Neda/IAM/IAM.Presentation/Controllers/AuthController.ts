@@ -25,10 +25,12 @@ export class AuthController {
     this._verifyService = verifyCodeService;
   }
 
-  public SignUp = (req: Request, res: Response) => {
+  public SignUp = async (req: Request, res: Response) => {
     const body: SignUpRequest = req.body;
     const mappedParam = SignUpMapper(body);
-    res.status(201).send(this._signUpService.Handle(mappedParam));
+    const authenticationResult = await this._signUpService.Handle(mappedParam);
+
+    res.status(201).send(authenticationResult);
   };
 
   public SignIn = async (req: Request, res: Response) => {

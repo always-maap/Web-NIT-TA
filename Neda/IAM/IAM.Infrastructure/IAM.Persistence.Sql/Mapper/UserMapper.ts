@@ -1,9 +1,7 @@
 import { User } from "IAM.Domain";
-import { users } from "../Configurations/UserConfiguration";
+import { UserAttributes } from "../Configurations/UserConfiguration";
 
-type InsertUser = typeof users.$inferInsert;
-
-export function UserMapper(user: User): InsertUser {
+export function UserMapper(user: User): UserAttributes {
   return {
     Id: user.Id,
     FirstName: user.FirstName,
@@ -11,7 +9,7 @@ export function UserMapper(user: User): InsertUser {
     Phone: user.Phone,
     Gender: user.Gender,
     Picture: user.Picture,
-    CreatedAt: user.CreatedAt,
-    UpdatedAt: user.UpdatedAt,
+    CreatedAt: user.CreatedAt.toString(),
+    UpdatedAt: user.UpdatedAt.toString(),
   };
 }

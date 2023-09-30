@@ -1,4 +1,8 @@
-export class User {
+import { Entity } from "@neda/framework";
+
+import { UserCreatedEvent } from "./Events";
+
+export class User extends Entity {
   Id: string;
   FirstName: string;
   LastName: string;
@@ -18,6 +22,7 @@ export class User {
     createdAt: Date,
     updatedAt: Date
   ) {
+    super();
     this.Id = id;
     this.FirstName = firstName;
     this.LastName = lastName;
@@ -46,6 +51,8 @@ export class User {
       new Date(),
       new Date()
     );
+
+    user.AddDomainEvent(new UserCreatedEvent(user));
 
     return user;
   }

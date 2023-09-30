@@ -1,11 +1,6 @@
-import { FakeSmsSender } from "@neda/framework";
+import { OutboxRepository } from "@neda/framework";
 
-import {
-  CreateRedisDatabase,
-  JWTTokenGenerator,
-  UserRepository,
-  VerifyCodeCacheProvider,
-} from "IAM.Infrastructure";
+import { InjectInfraDependencies } from "IAM.Infrastructure";
 import { AuthController } from "./Controllers/AuthController";
 import { UserController } from "./Controllers/UserController";
 import {
@@ -15,11 +10,15 @@ import {
 } from "IAM.Application";
 
 export const InjectDependencies = async () => {
-  const redisClient = await CreateRedisDatabase();
-  const jwtTokenGenerator = new JWTTokenGenerator();
-  const userRepository = new UserRepository();
-  const verifyCodeCacheProvider = new VerifyCodeCacheProvider(redisClient);
-  const fakeSmsSender = new FakeSmsSender();
+  const {
+    unitOfWork,
+    fakeSmsSender,
+    jwtTokenGenerator,
+    userRepository,
+    verifyCodeCacheProvider,
+  } = await InjectInfraDependencies();
+
+  const outboxRepository = new OutboxRepository();
 
   const signInService = new SignInService(
     userRepository,
@@ -27,7 +26,12 @@ export const InjectDependencies = async () => {
     fakeSmsSender
   );
 
-  const signUpService = new SignUpService(jwtTokenGenerator, userRepository);
+  const signUpService = new SignUpService(
+    jwtTokenGenerator,
+    userRepository,
+    outboxRepository,
+    unitOfWork
+  );
 
   const verifyService = new VerifyCodeService(
     verifyCodeCacheProvider,

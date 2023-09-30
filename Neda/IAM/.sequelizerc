@@ -1,0 +1,10 @@
+const path = require("path");
+
+const infraBase = path.resolve("IAM.Infrastructure", "IAM.Persistence.Sql");
+
+module.exports = {
+  config: path.resolve(infraBase, "db-config.json"),
+  "models-path": path.resolve(infraBase, "Configurations"),
+  "seeders-path": path.resolve(infraBase, "Seeders"),
+  "migrations-path": path.resolve(infraBase, "Migrations"),
+};

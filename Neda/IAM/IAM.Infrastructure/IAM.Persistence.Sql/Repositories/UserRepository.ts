@@ -1,19 +1,22 @@
+import { Transaction as TTransaction } from "sequelize";
+
 import { IUserRepository } from "IAM.Application";
 import { User } from "IAM.Domain";
-import { users } from "../Configurations/UserConfiguration";
-import { db } from "../Configurations/IAMContext";
+import { UserModel } from "../Configurations/UserConfiguration";
 import { UserMapper } from "../Mapper/UserMapper";
-import { eq } from "drizzle-orm";
 
 export class UserRepository implements IUserRepository {
-  async Add(user: User) {
+  async Add(user: User, transaction: TTransaction) {
     const mappedUser = UserMapper(user);
 
-    await db.insert(users).values(mappedUser);
+    await UserModel.create(mappedUser, {
+      transaction,
+    });
   }
 
-  async GetUserByPhone(phone: string): Promise<User> {
-    const x = await db.select().from(users).where(eq(users.Phone, phone));
-    return x[0];
+  async GetUserByPhone(phone: string) {
+    const user = await UserModel.findOne({ where: { Phone: phone } });
+
+    return user as any;
   }
 }

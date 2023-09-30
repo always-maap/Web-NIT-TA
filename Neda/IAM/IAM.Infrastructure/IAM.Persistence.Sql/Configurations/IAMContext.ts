@@ -1,5 +1,10 @@
-import { drizzle, PostgresJsDatabase } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
+import { Sequelize } from "sequelize-typescript";
+import { OutboxModel } from "@neda/framework";
 
-const queryClient = postgres(process.env.PG_CONN_STR!);
-export const db: PostgresJsDatabase = drizzle(queryClient);
+import { UserModel } from "./UserConfiguration";
+
+export function CreateDbConnection(): Sequelize {
+  return new Sequelize(process.env.PG_CONN_STR!, {
+    models: [UserModel, OutboxModel],
+  });
+}
