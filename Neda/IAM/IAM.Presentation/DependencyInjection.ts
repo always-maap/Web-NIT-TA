@@ -1,5 +1,3 @@
-import { OutboxRepository } from "@neda/framework";
-
 import { InjectInfraDependencies } from "IAM.Infrastructure";
 import { AuthController } from "./Controllers/AuthController";
 import { UserController } from "./Controllers/UserController";
@@ -15,10 +13,9 @@ export const InjectDependencies = async () => {
     fakeSmsSender,
     jwtTokenGenerator,
     userRepository,
+    outboxRepository,
     verifyCodeCacheProvider,
   } = await InjectInfraDependencies();
-
-  const outboxRepository = new OutboxRepository();
 
   const signInService = new SignInService(
     userRepository,

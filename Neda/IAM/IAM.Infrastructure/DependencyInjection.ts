@@ -1,4 +1,9 @@
-import { FakeSmsSender, Transaction, UnitOfWork } from "@neda/framework";
+import {
+  FakeSmsSender,
+  Transaction,
+  UnitOfWork,
+  OutboxRepository,
+} from "@neda/framework";
 
 import { JWTTokenGenerator } from "./IAM.Authentication/JwtTokenGenerator";
 import { CreateRedisDatabase } from "./IAM.Cache.Redis/Configurations/RedisDatabase";
@@ -15,7 +20,10 @@ export const InjectInfraDependencies = async () => {
   const redisClient = await CreateRedisDatabase();
   const jwtTokenGenerator = new JWTTokenGenerator();
 
-  const userRepository = new UserRepository();
+  const userRepository = new UserRepository(transaction);
+
+  const outboxRepository = new OutboxRepository(transaction);
+
   const verifyCodeCacheProvider = new VerifyCodeCacheProvider(redisClient);
   const fakeSmsSender = new FakeSmsSender();
 
@@ -24,6 +32,7 @@ export const InjectInfraDependencies = async () => {
     redisClient,
     jwtTokenGenerator,
     userRepository,
+    outboxRepository,
     verifyCodeCacheProvider,
     fakeSmsSender,
   };

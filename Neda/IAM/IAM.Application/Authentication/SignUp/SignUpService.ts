@@ -27,7 +27,7 @@ export class SignUpService implements ISignUpService {
   }
 
   public async Handle(params: SignUpParam) {
-    const x = await this._unitOfWork.Begin();
+    await this._unitOfWork.Begin();
 
     const user = User.Create(
       uuid.v4(),
@@ -39,11 +39,10 @@ export class SignUpService implements ISignUpService {
     );
 
     try {
-      await this._userRepository.Add(user, x);
-      await this._outboxRepository.AddMany(user.GetDomainEvents(), x);
+      await this._userRepository.Add(user);
+      await this._outboxRepository.AddMany(user.GetDomainEvents());
       await this._unitOfWork.Commit();
     } catch (e) {
-      console.log(e);
       await this._unitOfWork.Rollback();
     }
 
