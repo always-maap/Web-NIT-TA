@@ -5,13 +5,13 @@ export class OutboxItem {
   Type: string;
   Body: string;
   CreatedAt: string;
-  PublishedAt: string;
+  PublishedAt: string | null;
 
   constructor(event: DomainEvent) {
     this.Id = event.EventId;
     this.CreatedAt = event.Timestamp;
     this.Type = event.EventId;
     this.Body = JSON.stringify(event);
-    this.PublishedAt = event.Timestamp;
+    this.PublishedAt = null;
   }
 }

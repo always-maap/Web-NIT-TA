@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon -r tsconfig-paths/register IAM.Presentation/Program.ts",
-    "drizzle:migrate": "drizzle-kit generate:pg --config ./IAM.Infrastructure/IAM.Persistence.Sql/drizzle.config.ts",
-    "drizzle:push": "drizzle-kit push:pg --config ./IAM.Infrastructure/IAM.Persistence.Sql/drizzle.config.ts"
+    "db:migrate": "sequelize-cli db:migrate"
   },
   "author": "",
   "license": "ISC",

@@ -43,6 +43,7 @@ export class SignUpService implements ISignUpService {
       await this._outboxRepository.AddMany(user.GetDomainEvents());
       await this._unitOfWork.Commit();
     } catch (e) {
+      console.log(e);
       await this._unitOfWork.Rollback();
     }
 

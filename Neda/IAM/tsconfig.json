@@ -7,7 +7,8 @@
       "IAM.Domain": ["./IAM.Domain/index.ts"],
       "IAM.Application": ["./IAM.Application"],
       "IAM.Infrastructure": ["./IAM.Infrastructure"],
-      "IAM.Contracts": ["./IAM.Contracts"]
+      "IAM.Contracts": ["./IAM.Contracts"],
+      "IAM.Worker": ["./IAM.Worker"]
     }
   },
   "include": [
@@ -15,7 +16,8 @@
     "IAM.Domain/**/*.ts",
     "IAM.Infrastructure/**/*.ts",
     "IAM.Application/**/*.ts",
-    "IAM.Contracts/**/*.ts"
+    "IAM.Contracts/**/*.ts",
+    "IAM.Worker/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

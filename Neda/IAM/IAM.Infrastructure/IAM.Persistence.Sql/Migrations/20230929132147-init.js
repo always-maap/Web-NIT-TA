@@ -57,7 +57,6 @@ module.exports = {
         type: Sequelize.STRING,
       },
       published_at: {
-        allowNull: false,
         type: Sequelize.STRING,
       },
     });

@@ -1,3 +1,4 @@
+import { Optional } from "sequelize";
 import { Table, Model, Column, DataType } from "sequelize-typescript";
 
 export interface OutboxAttributes {
@@ -5,11 +6,16 @@ export interface OutboxAttributes {
   Type: string;
   Body: string;
   CreatedAt: string;
-  PublishedAt: string;
+  PublishedAt: string | null;
 }
 
+type UserCreationAttributes = Optional<OutboxAttributes, "PublishedAt">;
+
 @Table({ tableName: "outbox", createdAt: false, updatedAt: false })
-export class OutboxModel extends Model<OutboxAttributes> {
+export class OutboxModel extends Model<
+  OutboxAttributes,
+  UserCreationAttributes
+> {
   @Column({ type: DataType.STRING, field: "id", primaryKey: true })
   Id!: string;
 
@@ -22,6 +28,6 @@ export class OutboxModel extends Model<OutboxAttributes> {
   @Column({ type: DataType.STRING, field: "created_at", allowNull: false })
   CreatedAt!: string;
 
-  @Column({ type: DataType.STRING, field: "published_at", allowNull: false })
+  @Column({ type: DataType.STRING, field: "published_at" })
   PublishedAt!: string;
 }

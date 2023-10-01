@@ -4,6 +4,7 @@ import express from "express";
 import bodyParser from "body-parser";
 
 import { MapRoutes } from "./Controllers";
+import { UseWorkers } from "IAM.Worker";
 
 (async () => {
   const app = express();
@@ -18,6 +19,8 @@ import { MapRoutes } from "./Controllers";
   // map routes
   const mappedRoutes = await MapRoutes();
   app.use(mappedRoutes);
+
+  UseWorkers();
 
   // starting server
   app.listen(port, () => {

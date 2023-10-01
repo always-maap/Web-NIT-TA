@@ -1,12 +1,5 @@
 import { Optional } from "sequelize";
-import {
-  Table,
-  Model,
-  Column,
-  DataType,
-  CreatedAt,
-  UpdatedAt,
-} from "sequelize-typescript";
+import { Table, Model, Column, DataType } from "sequelize-typescript";
 
 export interface UserAttributes {
   Id: string;
