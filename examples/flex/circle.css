@@ -1,0 +1,20 @@
+/* .circle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/*
+  the following codes are irrelevant to the example
+*/
+.circle-wrapper {
+  background-color: blueviolet;
+  height: 100%;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: yellow;
+}

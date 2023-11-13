@@ -1,0 +1,24 @@
+/* .grow-shrink-nav {
+  display: flex;
+}
+
+.grow-shrink-nav main {
+  flex-grow: 1;
+}
+
+.grow-shrink-nav nav {
+  width: 500px;
+  flex-shrink: 100000;
+} */
+
+/*
+  the following codes are irrelevant to the example
+*/
+.grow-shrink-nav nav {
+  width: 500px;
+}
+
+.grow-shrink-nav > :is(main, nav) {
+  border: 2px solid;
+  padding: 16px;
+}

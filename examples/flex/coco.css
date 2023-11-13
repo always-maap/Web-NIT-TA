@@ -1,0 +1,25 @@
+.coco {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  /* flex-wrap: wrap; */
+}
+
+.card {
+  flex: 1 1 250px;
+  max-width: 250px;
+}
+
+/*
+  the following codes are irrelevant to the example
+*/
+.coco {
+  font-size: 18px;
+  padding-top: 16px;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}

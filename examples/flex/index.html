@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex examples</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-size: 32px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      html {
+        scroll-snap-type: mandatory;
+        scroll-snap-points-y: repeat(100vh);
+        scroll-snap-type: y mandatory;
+      }
+
+      section {
+        height: 100vh;
+        scroll-snap-align: start;
+      }
+
+      ul {
+        list-style: none;
+      }
+    </style>
+    <link rel="stylesheet" href="./flex-direction.css" />
+    <link rel="stylesheet" href="./circle.css" />
+    <link rel="stylesheet" href="./nav.css" />
+    <link rel="stylesheet" href="./align-self.css" />
+    <link rel="stylesheet" href="./messenger.css" />
+    <link rel="stylesheet" href="./grow-shrink.css" />
+    <link rel="stylesheet" href="./shorthand.css" />
+    <link rel="stylesheet" href="./coco.css" />
+  </head>
+  <body>
+    <section>
+      <div class="direction-wrapper">
+        <div>Hello</div>
+        <div>to</div>
+        <div>the</div>
+        <div>world</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="circle-wrapper">
+        <div class="circle"></div>
+      </div>
+    </section>
+
+    <section>
+      <nav>
+        <ul class="nav-list">
+          <li>Home</li>
+          <li>Content</li>
+          <li>About</li>
+        </ul>
+      </nav>
+    </section>
+
+    <section>
+      <ul class="align-self-list">
+        <li>⬅ Go back</li>
+        <li>Home</li>
+        <li>Content</li>
+        <li>About</li>
+      </ul>
+    </section>
+
+    <section>
+      <ul class="messenger-list">
+        <li class="message sent">Hey. how are you?</li>
+        <li class="message received">Hi. I'm fine. you?</li>
+        <li class="message sent">
+          I'm OK. I've been thinking about some change you know?
+        </li>
+        <li class="message received">Ahhh change...?</li>
+        <li class="message sent">Yeah I decided to break up with you 😔</li>
+        <li class="message received">
+          Fine. Who's gonna regret it? me or you?
+        </li>
+        <li>
+          <img
+            width="300px"
+            src="https://cdn.bartarinha.ir/thumbnail/aVZ9XetzWb7g/8HO7M3X68rptoakAQ3xaeOODdRwOaPMqrz_bYzvOfwsqOU1euh6PZh1L8OdHrJbnoacfmdDQobY,/photo_2023-06-12_17-42-04.jpg"
+          />
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="grow-shrink-nav">
+        <nav>
+          <h2>Navigation</h2>
+          <ul>
+            <li>Home</li>
+            <li>shop</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
+        <main>
+          <h1>Welcome to out Store</h1>
+          <p>Please enjoy your time shopping!</p>
+        </main>
+      </div>
+    </section>
+
+    <section>
+      <div class="shorthand">
+        <div>hi everybody</div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Elit sed
+          vulputate mi sit amet mauris.
+        </p>
+      </div>
+    </section>
+
+    <section class="coco">
+      <div class="card">
+        <img src="./images/coco-begin-cute.jpg" alt="coco" />
+        <h2>Lorem ipsum dolor sit amet</h2>
+      </div>
+      <div class="card">
+        <img src="./images/coco-yet-sleeping.jpg" alt="coco" />
+        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+      </div>
+      <div class="card">
+        <img src="./images/coco-looking.jpg" alt="coco" />
+        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+      </div>
+      <div class="card">
+        <img src="./images/coco-sleeping.jpg" alt="coco" />
+        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>
+      </div>
+
+      <div></div>
+      <div></div>
+    </section>
+  </body>
+</html>

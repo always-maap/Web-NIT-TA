@@ -1,0 +1,26 @@
+.shorthand {
+  display: flex;
+}
+
+/* .shorthand div {
+  flex: 1;
+} */
+
+/*
+  the following codes are irrelevant to the example
+*/
+.shorthand p {
+  flex: 1;
+}
+
+.shorthand * {
+  padding: 16px;
+}
+
+.shorthand div {
+  background-color: lightsalmon;
+}
+
+.shorthand p {
+  background-color: lightblue;
+}
