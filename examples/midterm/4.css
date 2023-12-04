@@ -1,0 +1,11 @@
+/* 1 */
+p.intro {}
+
+/* 2 */
+div > p {}
+
+/* 3 */
+p:first-child {}
+
+/* 4 */
+a:hover {}
