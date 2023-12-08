@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Theme Switcher</title>
+    <style>
+      body[data-theme="light"] {
+        --bg: #ffffff;
+        --text: #000000;
+      }
+      body[data-theme="dark"] {
+        --bg: #000000;
+        --text: #ffffff;
+      }
+
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <main
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+      "
+    >
+      <h1>Theme Switcher</h1>
+      <button
+        style="
+          background: none;
+          border: 1px solid red;
+          color: red;
+          padding: 8px;
+        "
+        onmousedown="this.style.transform = 'scale(0.95)'"
+        onmouseup="this.style.transform = 'scale(1)'"
+        onclick="toggleTheme()"
+      >
+        Toggle Theme
+      </button>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const savedTheme = localStorage.getItem("theme");
+
+        const themeToApply = savedTheme || "light";
+        document.body.setAttribute("data-theme", themeToApply);
+      });
+
+      function toggleTheme() {
+        const currentTheme = document.body.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+
+        document.body.setAttribute("data-theme", newTheme);
+
+        localStorage.setItem("theme", newTheme);
+      }
+    </script>
+  </body>
+</html>
