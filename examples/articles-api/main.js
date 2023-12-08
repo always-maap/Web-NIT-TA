@@ -2,6 +2,37 @@ import express from "express";
 import cors from "cors";
 import swaggerJsdoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
+import { data } from "./articles.js";
+
+const ArticleSchema = {
+  type: "object",
+  properties: {
+    id: {
+      type: "string",
+      description: "Article id",
+    },
+    title: {
+      type: "string",
+      description: "Article title",
+    },
+    content: {
+      type: "string",
+      description: "Article content",
+    },
+    author: {
+      type: "string",
+      description: "Article author",
+    },
+    publishedAt: {
+      type: "string",
+      description: "Article published date",
+    },
+    isFeatured: {
+      type: "boolean",
+      description: "Article is featured",
+    },
+  },
+};
 
 const options = {
   definition: {
@@ -23,13 +54,18 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-let articles = [];
+let articles = data;
 
 /**
  * @swagger
  * /api/articles:
  *   get:
  *     summary: Returns the list of all the articles
+ *     parameters:
+ *       - in: query
+ *         name: featured
+ *         schema:
+ *           type: boolean
  *     responses:
  *       200:
  *         description: The list of the articles
@@ -41,7 +77,13 @@ let articles = [];
  *                 $ref: '#/components/schemas/Article'
  */
 app.get("/api/articles", (req, res) => {
-  return res.json(articles);
+  // get only featured articles
+  const onlyFeatured = req.query.featured;
+  let filteredArticles = onlyFeatured
+    ? articles.filter((a) => a.isFeatured)
+    : articles;
+
+  return res.json(filteredArticles);
 });
 
 /**
@@ -175,37 +217,13 @@ class Article {
     content = "",
     author = "",
     publishedAt = new Date(),
+    isFeatured = false,
   }) {
     this.id = id;
     this.title = title;
     this.content = content;
     this.author = author;
     this.publishedAt = publishedAt;
+    this.isFeatured = isFeatured;
   }
 }
-
-var ArticleSchema = {
-  type: "object",
-  properties: {
-    id: {
-      type: "string",
-      description: "Article id",
-    },
-    title: {
-      type: "string",
-      description: "Article title",
-    },
-    content: {
-      type: "string",
-      description: "Article content",
-    },
-    author: {
-      type: "string",
-      description: "Article author",
-    },
-    publishedAt: {
-      type: "string",
-      description: "Article published date",
-    },
-  },
-};
