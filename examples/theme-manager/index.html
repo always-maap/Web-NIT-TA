@@ -20,6 +20,7 @@
     </style>
   </head>
   <body>
+    <script></script>
     <main
       style="
         display: flex;
@@ -50,14 +51,14 @@
         const savedTheme = localStorage.getItem("theme");
 
         const themeToApply = savedTheme || "light";
-        document.body.setAttribute("data-theme", themeToApply);
+        document.body.dataset.theme = themeToApply;
       });
 
       function toggleTheme() {
         const currentTheme = document.body.getAttribute("data-theme");
         const newTheme = currentTheme === "light" ? "dark" : "light";
 
-        document.body.setAttribute("data-theme", newTheme);
+        document.body.dataset.theme = newTheme;
 
         localStorage.setItem("theme", newTheme);
       }
