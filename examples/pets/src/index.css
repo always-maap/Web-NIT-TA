@@ -1,15 +1,16 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 body {
   background-image: url(http://pets-images.dev-apis.com/pets/wallpaperB.jpg);
   background-size: 300px;
+}
+
+#root {
+  padding: 25px;
+  height: 100vh;
+}
+
+.glass {
+  backdrop-filter: blur(2px);
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  height: 100%;
 }

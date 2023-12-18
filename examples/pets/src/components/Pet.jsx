@@ -1,10 +1,21 @@
+import { Card } from "react-bootstrap";
+
 export default function Pet(props) {
+  const { image, name, animal, breed } = props;
+
   return (
-    <div className="pet">
-      <img src={props.image} alt={props.name} />
-      <h1>{props.name}</h1>
-      <h2>{props.animal}</h2>
-      <h2>{props.breed}</h2>
-    </div>
+    <Card style={{ width: "18rem" }}>
+      <Card.Img variant="top" src={image} height="286px" />
+      <Card.Body>
+        <Card.Title>{name}</Card.Title>
+        <Card.Text>
+          {animal} - {breed}
+        </Card.Text>
+        {props.description && <Card.Text>📝 {props.description}</Card.Text>}
+        <Card.Text>
+          {props.location && <Card.Text>🌍 {props.location}</Card.Text>}
+        </Card.Text>
+      </Card.Body>
+    </Card>
   );
 }
